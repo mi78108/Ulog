@@ -34,7 +34,6 @@ EOF
 
 cat > $root_dir/README.md <<EOF
 # $1
-
 ## 描述
 
 
