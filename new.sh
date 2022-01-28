@@ -35,7 +35,7 @@ EOF
 cat > $root_dir/README.md <<EOF
 # $1
 ## 描述
-
+   $2
 
 ## 环境
 > - 时间: $(date)
