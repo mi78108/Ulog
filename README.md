@@ -13,7 +13,9 @@ Gentoo amd64/17.1/deskto
 
 ## 桌面
 KDE Plasma 5.23.5 X11
+
 Dwm 6.2 X11
+
 Gnome wayland
 
 ## 显卡
@@ -21,3 +23,5 @@ NVIDIA GTX 1080
 
 ## 处理器
 INTEL i5-9600K
+
+![图片](https://user-images.githubusercontent.com/15873910/151482443-626b8e4b-1324-478d-840b-220e45d75a4d.png)
