@@ -4,7 +4,7 @@
     根据问题标题和描述生成目录
 !
 
-doc_file="./问题清单.md"
+doc_file="./记录清单.md"
 echo '# 目录列表' > $doc_file
 for year in $(ls ./); do
     if [[ -d $year ]]; then
