@@ -9,33 +9,34 @@
 
 
 ## 状态
-    [x] 已解决
+   - [x] 已解决
+   - 实时性不高，胜在稳定可靠。
 
 ## 原因
 
 
 ## 修复
-    主要通过脚本实现:
-    ```
-        $ cat ~/Sync/init
-        #!/usr/bin/env zsh
+主要通过脚本实现:
+```
+$ cat ~/Sync/init
+#!/usr/bin/env zsh
 
-        for script in $HOME/Sync/do.d/*;
-        do
-            if [[ -f $script ]] && [[ -x $script ]]; then
-            echo "`date` exec > "$script
-            $script &
-        fi
-        done
+for script in $HOME/Sync/do.d/*;
+do
+   if [[ -f $script ]] && [[ -x $script ]]; then
+        echo "`date` exec > "$script
+        $script &
+   fi
+done
+```
 
-    ```
+然后需要在crontab加条任务
 
-    然后需要在crontab加条任务
-    `* * * * *       /home/user/Sync/init >> /tmp/do.log 2>&1`
+`* * * * *       /home/user/Sync/init >> /tmp/do.log 2>&1`
 
-    如果是多台设备需要指定某台运行
-    ```
-        $ cat ~/Sync/do.d/do_target
+如果是多台设备需要指定某台运行,再加上这个脚本
+```
+$ cat ~/Sync/do.d/do_target
 #!/usr/bin/env zsh
 
 script_path="$HOME/Sync/do.d/$(hostname)"
@@ -49,4 +50,4 @@ do
         $script &
     fi
 done
-    ```
+```
